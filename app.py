@@ -11,6 +11,6 @@ height = st.number_input(label = "Enter height in Inches", min_value = 35.0, max
 submitted = st.button('Submit')
 
 if submitted:
-    pickled_model = pickle.load(open('model.pkl', 'rb'))
-    weight = pickled_model.predict([[height]])
+    model = pickle.load(open('model.pkl', 'rb'))
+    weight = model.predict([[height]])
     st.write(f"Expected weight value is **{weight[0]}** pounds")
